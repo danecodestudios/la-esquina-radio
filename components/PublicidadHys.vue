@@ -48,7 +48,7 @@
     computed:{
         height () {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 50
+          case 'xs': return 40
           case 'sm': return 80
           case 'md': return 100
           case 'lg': return 135
