@@ -32,8 +32,9 @@
         <Logo-transp />
         <v-spacer />
         {{ titleEmisora }}
-        <v-btn class="p-3 ml-4 pink accent-3" icon @click.stop="rightDrawer = !rightDrawer">
-          <v-icon class="p-4">mdi-motion-play-outline</v-icon>
+        <v-btn class="p-3 ml-4 pink accent-3" icon @click.stop="sonido()">
+          <v-icon v-if="!pausa" class="p-4" size="45">mdi-motion-play-outline</v-icon>
+          <v-icon v-if="pausa" class="p-4" size="45">mdi-motion-pause-outline</v-icon>
         </v-btn>
       </v-toolbar>
     </v-app-bar>
@@ -54,6 +55,12 @@
 export default {
   data() {
     return {
+
+      // EMISORA 
+      audio : null,
+      pausa: false,
+// ====================
+
       clipped: true,
       drawer: false,
       fixed: true,
@@ -77,5 +84,29 @@ export default {
       to: '/',
     }
   },
+
+     mounted() {
+    this.$store.commit('initializeSound');
+  },
+
+    methods: {
+    sonido() {
+
+   
+      if (this.pausa == false || this.isSoundEnabled) {
+        this.audio = new Audio("http://stream.zeno.fm/459vbcprnd0uv")
+        this.audio.play()
+        this.pausa = true
+      } else {
+        this.audio.pause()
+        this.pausa = false
+      }
+    },
+  },
+computed: {
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
+    },
+  }
 }
 </script>
