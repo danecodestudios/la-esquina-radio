@@ -1,9 +1,11 @@
 <template>
-  <img
+<Nuxt-link to="/">
+    <img
     class="LaEsquinaLogo"
     alt="LA ESQUINA RADIO"
     src="/logo-trasp.svg"
   >
+</Nuxt-link>
 </template>
 
 <style>

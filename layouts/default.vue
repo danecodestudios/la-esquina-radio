@@ -31,7 +31,12 @@
       <v-toolbar class="black text-center">
         <Logo-transp />
         <v-spacer />
-        {{ titleEmisora }}
+         <v-divider
+      class="mx-4 pink darken-3"
+      vertical
+
+    ></v-divider>
+         <h6 class="text-sm-body-2">{{ titleEmisora }}</h6>
         <v-btn class="p-3 ml-4 pink accent-3" icon @click.stop="sonido()">
           <v-icon v-if="!pausa" class="p-4" size="45">mdi-motion-play-outline</v-icon>
           <v-icon v-if="pausa" class="p-4" size="45">mdi-motion-pause-outline</v-icon>
@@ -46,7 +51,7 @@
     </v-main>
 
     <v-footer :absolute="!fixed" app>
-      <span>&copy; LA ESQUINA RADIO {{ new Date().getFullYear() }}</span>
+      <span>&copy; LA ESQUINA RADIO {{ new Date().getFullYear() }} </span>
     </v-footer>
   </v-app>
 </template>
@@ -80,7 +85,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'LA ESQUINA RADIO ',
-      titleEmisora: ' EN VIVO',
+      titleEmisora: 'EMISORA EN VIVO',
       to: '/',
     }
   },
@@ -110,3 +115,10 @@ computed: {
   }
 }
 </script>
+
+
+<style>
+a{
+  text-decoration: none;
+}
+</style>
