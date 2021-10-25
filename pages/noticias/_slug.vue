@@ -23,7 +23,9 @@
 
             <div class="card-body">
              
-                <p class="contenido" v-html="contenido"></p>
+                <div class="contenido" v-html="contenido">
+
+                </div>
               
             </div>
           </div>
@@ -132,28 +134,8 @@ color: rgb(255, 255, 255);
     font-size: 25px;
     font-weight: 900;
   }
-  img {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-  .tarjeta {
-    background-color: rgb(255, 255, 255);
-    border-radius: 13px;
-    position: relative;
-    bottom: 5px;
-    box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
-  }
-  .cat {
-    background-color: #250167;
-    text-transform: uppercase;
-    top: -18px;
-    position: absolute;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
+
+
 }
 /* MEDIDA CELULAR  MEDIANO (M Y L)  */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {

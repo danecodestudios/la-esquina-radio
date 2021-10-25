@@ -121,4 +121,8 @@ computed: {
 a{
   text-decoration: none;
 }
+
+img{
+  width: 100%  !important;
+}
 </style>
